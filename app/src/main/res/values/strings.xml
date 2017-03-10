@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Classroom</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="splash_tv_text">national institute of technology</string>
+    <string name="action_about">About</string>
+</resources>
