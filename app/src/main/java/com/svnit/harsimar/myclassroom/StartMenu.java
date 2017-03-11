@@ -10,7 +10,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 public class StartMenu extends ListActivity {
-    String classes[] = {"MainActivity", "ACT2", "ACT3", "ACT4"};
+    String classes[] = {"MainActivity", "FragmentActivity", "Testing", "firebase"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

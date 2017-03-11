@@ -1,8 +1,10 @@
 package com.svnit.harsimar.myclassroom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -67,7 +70,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            Toast.makeText(MainActivity.this,"About the app and developer",Toast.LENGTH_SHORT).show();
             return true;
         }
 
@@ -83,6 +87,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_attendance) {
             // Handle the camera action
         } else if (id == R.id.nav_bc) {
+            Intent launch_bc_connect=new Intent(this,bc_connect.class);
+            startActivity(launch_bc_connect);
 
         } else if (id == R.id.nav_faculty) {
 

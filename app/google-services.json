@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "961759086629",
+    "firebase_url": "https://myclassroom-11c78.firebaseio.com",
+    "project_id": "myclassroom-11c78",
+    "storage_bucket": "myclassroom-11c78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961759086629:android:d137dc6bd3567266",
+        "android_client_info": {
+          "package_name": "com.svnit.harsimar.myclassroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961759086629-dq6nu1v060hqn2qfcihdq080c5p21jk6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.svnit.harsimar.myclassroom",
+            "certificate_hash": "06d95c44805f8882c208e73ceab91ea04a44f5ee"
+          }
+        },
+        {
+          "client_id": "961759086629-i8d9nb4s5r8t5lt2clhlrsvl9p64tb35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnNj0EOx-yAEIBRMfGLKNFJNcwyLteD-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961759086629-i8d9nb4s5r8t5lt2clhlrsvl9p64tb35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

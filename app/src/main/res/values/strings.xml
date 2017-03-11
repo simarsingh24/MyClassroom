@@ -5,4 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="splash_tv_text">national institute of technology</string>
     <string name="action_about">About</string>
+    <string name="post_title">Post Title</string>
+    <string name="post_description">Description</string>
+    <string name="submit_post">submit post</string>
 </resources>
