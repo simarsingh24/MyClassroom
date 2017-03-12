@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_attendance) {
+
             // Handle the camera action
         } else if (id == R.id.nav_bc) {
             Intent launch_bc_connect=new Intent(this,bc_connect.class);

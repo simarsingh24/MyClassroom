@@ -29,6 +29,8 @@ public class firebase extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String text=sendText.getText().toString();
+
+
                 Firebase childRef=mRootRef.child(keyText.getText().toString());
                 //mRootRef.push().setValue(sendText);
                 childRef.setValue(text);
