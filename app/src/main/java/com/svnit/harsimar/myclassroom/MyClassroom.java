@@ -2,13 +2,14 @@ package com.svnit.harsimar.myclassroom;
 
 import android.app.Application;
 import com.firebase.client.Firebase;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MyClassroom extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
         Firebase.setAndroidContext(this);
-       /* FirebaseDatabase.getInstance().setPersistenceEnabled(true);*/
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 /*
         Picasso.Builder builder =new Picasso.Builder(this);
         builder.downloader(new OkHttpDownloader(this,Integer.MAX_VALUE));

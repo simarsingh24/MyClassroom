@@ -27,6 +27,17 @@ public class bc_connect extends AppCompatActivity {
         setContentView(R.layout.activity_bc_connect);
 
         mDatabase= FirebaseDatabase.getInstance().getReference().child("MyClassroom");
+        mDatabase.keepSynced(true);
+
+        /*
+        I wonder if ill ever be able to write something as beautiful and nostalgic,
+                like the curiously gentle way you smile
+                and if i never happen to stumble upon such words,
+                i suppose settling would be the next great adventure!
+
+        */
+
+        
         mBcConnectRecycler=(RecyclerView)findViewById(R.id.recycler_bc_connect);
         mBcConnectRecycler.setHasFixedSize(true);
         mBcConnectRecycler.setLayoutManager(new LinearLayoutManager(this));
