@@ -92,6 +92,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(launch_bc_connect);
 
         } else if (id == R.id.nav_faculty) {
+            Intent launch_faculty_info=new Intent(this,faculty.class);
+            startActivity(launch_faculty_info);
 
         } else if (id == R.id.nav_placement) {
 

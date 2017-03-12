@@ -62,7 +62,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".faculty"></activity>
+        <activity android:name=".faculty" />
+        <activity android:name=".FacultyAdd"></activity>
     </application>
 
 </manifest>
