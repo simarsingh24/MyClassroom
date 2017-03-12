@@ -3,6 +3,8 @@ package com.svnit.harsimar.myclassroom;
 import android.app.Application;
 import com.firebase.client.Firebase;
 import com.google.firebase.database.FirebaseDatabase;
+//import com.squareup.picasso.OkHttpDownloader;
+//import com.squareup.picasso.Picasso;
 
 public class MyClassroom extends Application {
     @Override
@@ -16,6 +18,7 @@ public class MyClassroom extends Application {
         Picasso built = builder.build();
         built.setIndicatorsEnabled(false);
         built.setLoggingEnabled(true);
-        Picasso.setSingletonInstance(built);*/
+        Picasso.setSingletonInstance(built);
+*/
     }
 }

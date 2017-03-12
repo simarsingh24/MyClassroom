@@ -22,6 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 public class PostActivity extends AppCompatActivity {
     private ImageButton mSelectImage;
@@ -116,11 +118,30 @@ public class PostActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode==GALLERY_REQUEST){
-            mImageUri=data.getData();
-            mSelectImage.setImageURI(mImageUri);
-            }
-
         super.onActivityResult(requestCode, resultCode, data);
+
+            if(requestCode==GALLERY_REQUEST){
+                mImageUri=data.getData();
+                CropImage.activity(mImageUri).setGuidelines(CropImageView.Guidelines.ON).start(this);
+/*
+        if(requestCode==GALLERY_REQUEST && requestCode==RESULT_OK){
+
+            mImageUri=data.getData();
+            CropImage.activity(mImageUri).setGuidelines(CropImageView.Guidelines.ON).start(this);
+                /*
+            mSelectImage.setImageURI(mImageUri);
+            */
+            }
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                Uri resultUri = result.getUri();
+                mSelectImage.setImageURI(resultUri);
+                mImageUri=resultUri;
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+            }
+        }
+
     }
 }
