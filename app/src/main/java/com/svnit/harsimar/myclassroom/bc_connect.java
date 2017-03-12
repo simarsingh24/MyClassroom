@@ -83,6 +83,14 @@ public class bc_connect extends AppCompatActivity {
                 viewHolder.setDesc(model.getDesc());
                 viewHolder.setImage(getApplicationContext(),model.getImage());
 
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+
+                    }
+                });
             }
         };
         mBcConnectRecycler.setAdapter(firebaseRecyclerAdapter);
