@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -36,6 +38,15 @@ public class bc_connect extends AppCompatActivity {
         setContentView(R.layout.activity_bc_connect);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_bc_connect);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Under Construction", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
       //  mAuth=FirebaseAuth.getInstance();
        /* mAuthStateListener=new FirebaseAuth.AuthStateListener() {
             @Override

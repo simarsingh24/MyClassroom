@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +57,8 @@ public class PostActivity extends AppCompatActivity {
         mPostDesc =(EditText) findViewById(R.id.post_description_et);
         mPostTitle=(EditText) findViewById(R.id.post_title_et);
         mSubmitBtn=(Button)findViewById(R.id.submit_post_btn);
+
+
 
         mProgress=new ProgressDialog(this);
 
