@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,6 +45,7 @@ public class FacultyAdd extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty_add);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mStorage= FirebaseStorage.getInstance().getReference();
         mDatabase= FirebaseDatabase.getInstance().getReference().child("Faculty");
@@ -138,5 +140,16 @@ public class FacultyAdd extends AppCompatActivity {
             }
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+
+            this.finish();
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

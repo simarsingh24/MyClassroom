@@ -63,7 +63,7 @@
         </activity>
         <activity android:name=".Register" />
         <activity android:name=".faculty" />
-        <activity android:name=".FacultyAdd"></activity>
+        <activity android:name=".FacultyAdd" />
     </application>
 
 </manifest>

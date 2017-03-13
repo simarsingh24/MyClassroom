@@ -4,10 +4,13 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,8 +45,9 @@ public class PostActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mStorage= FirebaseStorage.getInstance().getReference();
+         mStorage= FirebaseStorage.getInstance().getReference();
         mDatabase= FirebaseDatabase.getInstance().getReference().child("MyClassroom");
         //mDatabaseRoot= new Firebase("https://myclassroom-11c78.firebaseio.com/MyClassroom");
 
@@ -144,4 +148,19 @@ public class PostActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        System.out.println(item.getItemId());
+        System.out.println(android.R.id.home);
+
+        if(item.getItemId()==android.R.id.home){
+
+             this.finish();
+
+              }
+        return super.onOptionsItemSelected(item);
+
+    }
+
 }

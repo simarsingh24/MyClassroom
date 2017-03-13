@@ -24,6 +24,7 @@ public class faculty extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculty);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDatabaseReference= FirebaseDatabase.getInstance().getReference().child("Faculty");
         mDatabaseReference.keepSynced(true);
@@ -90,6 +91,11 @@ public class faculty extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.action_add_post){
             startActivity(new Intent(this,FacultyAdd.class));
+        }
+        if(item.getItemId()==android.R.id.home){
+
+            this.finish();
+
         }
         return super.onOptionsItemSelected(item);
     }

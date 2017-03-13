@@ -34,6 +34,7 @@ public class bc_connect extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bc_connect);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
       //  mAuth=FirebaseAuth.getInstance();
        /* mAuthStateListener=new FirebaseAuth.AuthStateListener() {
@@ -145,6 +146,12 @@ public class bc_connect extends AppCompatActivity {
         if(item.getItemId()==R.id.action_add_post){
             startActivity(new Intent(this,PostActivity.class));
         }
+        if(item.getItemId()==android.R.id.home){
+
+            this.finish();
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
