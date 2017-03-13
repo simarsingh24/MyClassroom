@@ -1,15 +1,21 @@
 package com.svnit.harsimar.myclassroom;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +25,9 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Callback;
@@ -61,6 +70,51 @@ public class bc_connect extends AppCompatActivity {
 
         mDatabase= FirebaseDatabase.getInstance().getReference().child("MyClassroom");
         mDatabase.keepSynced(true);
+
+        mDatabase.addChildEventListener(new ChildEventListener() {
+            int i=0;
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                    i++;
+                if(i>=2){
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(bc_connect.this);
+                    builder.setSmallIcon(R.drawable.ic_menu_camera);
+                    builder.setContentTitle("Branch Counsellor ECE");
+                    builder.setContentText("New message from your Branch Counsellor");
+                    Intent intent=new Intent(bc_connect.this,bc_connect.class);
+                    TaskStackBuilder stackBuilder=TaskStackBuilder.create(bc_connect.this);
+                    stackBuilder.addParentStack(bc_connect.class);
+                    stackBuilder.addNextIntent(intent);
+                    PendingIntent pendingIntent=stackBuilder.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
+                    builder.setContentIntent(pendingIntent);
+                    NotificationManager nm=(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                    nm.notify(0,builder.build());
+                    i=0;
+                }
+                Log.d("harsimarSINGH","added");
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         /*
         I wonder if ill ever be able to write something as beautiful and nostalgic,
