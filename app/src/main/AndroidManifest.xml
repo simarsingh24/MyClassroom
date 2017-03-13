@@ -52,8 +52,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".bc_connect" />
-        <activity android:name=".PostActivity" />
+        <activity android:name=".bc_connect"
+            android:label="Messages"/>
+        <activity android:name=".PostActivity"
+            android:label="Post Message"/>
+
         <activity android:name=".databasecheck">
             <intent-filter>
                 <action android:name="com.svnit.harsimar.myclassroom.databasecheck" />
@@ -62,8 +65,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".faculty" />
-        <activity android:name=".FacultyAdd" />
+        <activity android:name=".faculty"
+            android:label="Faculty"/>
+        <activity android:name=".FacultyAdd"
+            android:label="Add Member"/>
     </application>
 
 </manifest>
