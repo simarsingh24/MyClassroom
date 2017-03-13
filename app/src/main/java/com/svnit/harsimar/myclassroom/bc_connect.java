@@ -43,8 +43,7 @@ public class bc_connect extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Under Construction", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(bc_connect.this,PostActivity.class));
             }
         });
       //  mAuth=FirebaseAuth.getInstance();
@@ -147,16 +146,13 @@ public class bc_connect extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.bc_connect_menu,menu);
+       // getMenuInflater().inflate(R.menu.bc_connect_menu,menu);
 
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.action_add_post){
-            startActivity(new Intent(this,PostActivity.class));
-        }
         if(item.getItemId()==android.R.id.home){
 
             this.finish();

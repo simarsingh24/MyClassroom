@@ -35,11 +35,12 @@ public class faculty extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(faculty.this,FacultyAdd.class));
                 Snackbar.make(view, "Under Construction", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-        
+
         facultyRecycler=(RecyclerView)findViewById(R.id.recycler_faculty);
         facultyRecycler.setHasFixedSize(true);
         facultyRecycler.setLayoutManager(new LinearLayoutManager(this));
@@ -94,19 +95,15 @@ public class faculty extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.bc_connect_menu,menu);
+     //   getMenuInflater().inflate(R.menu.bc_connect_menu,menu);
 
         return super.onCreateOptionsMenu(menu);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.action_add_post){
-            startActivity(new Intent(this,FacultyAdd.class));
-        }
+
         if(item.getItemId()==android.R.id.home){
-
             this.finish();
-
         }
         return super.onOptionsItemSelected(item);
     }
