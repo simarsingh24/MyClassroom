@@ -103,6 +103,13 @@ public class faculty extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if(item.getItemId()==android.R.id.home){
+
+            Intent back=new Intent(faculty.this,MainActivity.class);
+            back.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(back);
+
+
+
             this.finish();
         }
         return super.onOptionsItemSelected(item);
